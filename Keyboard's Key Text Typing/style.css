@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #e2e2e2;
+}
+
+.output{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  gap: 20px 20px;
+  padding: 20px;
+  max-width: 500px;
+  user-select: none;
+}
+
+.output .key{
+  position: relative;
+  display: inline-block;
+  width:60px;
+  height: 60px;
+  padding: 8px 15px;
+  background: linear-gradient(135deg, #fff, #d3d3d3);
+  border-radius: 10px;
+  text-transform: uppercase;
+  overflow: hidden;
+  box-shadow: inset -8px 0 8px rgba(0,0,0,0.15), inset 0 -8px 8px rgba(0,0,0,0.25), 5px 10px 15px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,0,0,0.5);
+
+}
+
+.output .key::before{
+ content: '';
+ position: absolute; 
+ top: 5px;
+ left: 4px;
+ bottom: 10px;
+ right: 8px;
+ background: linear-gradient(135deg, #d3d3d3, #fff);
+ border-radius: 8px;
+ box-shadow: -5px -5px 5px rgba(255,255,255,0.25), 10px 5px 10px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255, 0.25);
+
+}
+
+.output .key i{
+  position: relative;
+  z-index: 1000;
+  color: #333;
+  font-size: 1.35em;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.output .key:nth-child(even){
+  background: linear-gradient(135deg, #ff3347, #ff0018);
+}
+
+.output .key:nth-child(even).key::before{
+  background: linear-gradient(135deg, #ff0018, #ff3347);
+}
+
+.output .key:nth-child(even) i{
+  color: #fff;
+}
