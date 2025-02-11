@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #222;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.box{
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border: 2px solid #0005;
+  transition: 0.5s;
+  transform-origin: bottom center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,#0002);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .box span{
+  font-size: 4em;
+  font-weight: 700;
+}
+
+.container .box.prev{
+  margin: 0 -20px;
+  transform: perspective(500px) rotateY(45deg) scale(0.95);
+  filter:drop-shadow(0 0 25px #0005) drop-shadow(0 0 45 #0005)
+}
+
+.container .box.next{
+  margin: 0 -20px;
+  transform: perspective(500px) rotateY(-45deg) scale(0.95);
+  filter:drop-shadow(0 0 25px #0005) drop-shadow(0 0 45 #0005)
+}
+
+.container .box.hovered{
+  transform: perspective(500px) rotateY(0deg) scale(1.5);
+  background-color: #9cdb28;
+  color: #fff;
+  box-shadow: 0 0 50px rgba(0,0,0,0.25);
+}
