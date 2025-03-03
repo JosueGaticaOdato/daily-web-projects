@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Style Button</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="" class="btn">Netflix</a>
+    <a href="" class="btn">Button</a>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      let btns = document.querySelectorAll(".btn");
+      btns.forEach(function(btn){
+        let spans = [];
+        for( let i = 0; i < 120; i++){
+          let span = document.createElement("span");
+          span.style.left =  `${i * 2}px`;
+          spans.push(span);
+          btn.appendChild(span);
+          let randomDelay = (Math.random() * 1) + 0;
+          span.style.transitionDelay = randomDelay + 's';
+        }
+      })
+    })
+  </script>
+</body>
+</html>
