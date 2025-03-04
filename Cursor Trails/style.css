@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #222;
+  overflow: hidden;
+  background-image: linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px);
+  background-size: 4vh 4vh;
+}
+
+.cursor{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  pointer-events: none;
+}
+
+.box{
+  position: absolute;
+  width: 20px;
+  height: 5px;
+  background-color: #00ff9a;
+  box-shadow: 0 0 15px #00ff9a, 0 0 50px #00ff9a;
+}
