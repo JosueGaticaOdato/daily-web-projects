@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Swiper Card Slider</title>
+  </head>
+  <body>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="imgBx">
+            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          </div>
+          <div class="content">
+            <h2>John Doe <br /><span>Web Designer</span></h2>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="imgBx">
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          </div>
+          <div class="content">
+            <h2>John Doe <br /><span>Web Designer</span></h2>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="imgBx">
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          </div>
+          <div class="content">
+            <h2>John Doe <br /><span>Web Designer</span></h2>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="imgBx">
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          </div>
+          <div class="content">
+            <h2>John Doe <br /><span>Web Designer</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script type="text/javascript">
+      var swiper = new Swiper(".mySwiper", {
+        effect: "cube",
+        grabCursor: true,
+        cubeEffect: {
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        },
+      });
+    </script>
+  </body>
+</html>
