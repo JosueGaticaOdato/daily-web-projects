@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container{
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.container .tile{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: 400px 400px;
+}
+
+.container .tile.img1{
+  background-image: url(img1.jpg);
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.container .tile.img2{
+  background-image: url(img2.jpg);
+  opacity: 0;
+}
+
+.container:hover .tile.img1{
+  opacity: 0;
+}
+
+.container:hover .tile.img2{
+  opacity: 1;
+}
+

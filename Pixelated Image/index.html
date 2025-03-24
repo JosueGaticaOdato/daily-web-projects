@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelated Image Swap on Hover</title>
+  <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+  <div class="container"></div>
+  <script>
+    let container = document.querySelector(".container");
+    let tileSize = 20;
+    let imageSIze = 400;
+    let rows = imageSIze / tileSize; //20
+    let cols = imageSIze / tileSize; //20
+
+    //create tiles for both images
+    for (let row = 0; row < rows; row++){
+      for (let col = 0; col < cols; col++){
+        console.log(col);
+        let tile1 = document.createElement("div");
+        tile1.classList.add("tile","img1");
+        tile1.style.left = `${col * tileSize}px`;
+        tile1.style.top = `${row * tileSize}px`;
+        tile1.style.backgroundPosition = `${col * tileSize}px ${row * tileSize}px`;
+
+        let tile2 = document.createElement("div");
+        tile2.classList.add("tile","img2");
+        tile2.style.left = `${col * tileSize}px`;
+        tile2.style.top = `${row * tileSize}px`;
+        tile2.style.backgroundPosition = `${col * tileSize}px ${row * tileSize}px`;
+
+        let randomDelay = Math.random() * 0.8;
+        tile2.style.transitionDelay = `${randomDelay}s`;
+
+        container.appendChild(tile1);
+        container.appendChild(tile2);
+      }
+    }
+  </script>
+</body>
+</html>
