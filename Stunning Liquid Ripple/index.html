@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stunning Liquid Ripple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+  <script>
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        let rect = card.getBoundingClientRect();
+        let mouseX = e.clientX - rect.left;
+        let mouseY = e.clientY - rect.top;
+
+        let Ripple = document.createElement("div");
+        Ripple.classList.add("ripple");
+        Ripple.style.left = `${mouseX}px`;
+        Ripple.style.top = `${mouseY}px`;
+
+        card.appendChild(Ripple);
+
+        Ripple.addEventListener('animationend', () => {
+          Ripple.remove();
+        })
+      })
+    })
+  </script>
+</body>
+</html>
