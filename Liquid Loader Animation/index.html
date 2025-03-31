@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liquid Loader 02</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #010b10;
+      }
+
+      .loader{
+        position: relative;
+        width: 300px;
+        height: 40px;
+        filter: url(#liquid)
+      }
+
+      .loader span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        display: block;
+        box-shadow: 0 0 40px #009ad4;
+        background: linear-gradient(#02edff, #009ad4);
+        animation: animate 5s ease-in-out infinite;
+        animation-delay: calc(0.2s * var(--i));
+      }
+
+      @keyframes animate {
+        0%{
+          left: 0;
+        }
+        25%{
+          left: calc(100% - 40px);
+        }
+        50%{
+          left: calc(100% - 40px);
+        }
+        75%,100%{
+          left: 0;
+        }
+      }
+
+      svg{
+        width: 0;
+        height: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+      <span style="--i: 4"></span>
+      <span style="--i: 5"></span>
+      <span style="--i: 6"></span>
+      <span style="--i: 7"></span>
+    </div>
+    <svg>
+      <filter id="liquid">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+        <feColorMatrix values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 20 -10"/>
+      </filter>
+    </svg>
+  </body>
+</html>
